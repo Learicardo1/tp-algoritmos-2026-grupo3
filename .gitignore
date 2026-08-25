@@ -1,0 +1,28 @@
+# --- Ejecutables ---
+normalizacion
+ventas
+cierre
+resumen
+*.exe
+*.out
+*.o
+*.obj
+
+# --- Archivos de datos ---
+# Los .dat se generan al correr los programas: NO se versionan.
+*.dat
+# Excepcion: los provistos por la catedra, que si van en el repo.
+!datos/*.dat
+
+# --- Editores / sistema operativo ---
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
+Thumbs.db
+
+# --- Depuracion ---
+*.dSYM/
+core
+a.out

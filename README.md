@@ -7,7 +7,7 @@ unidad de **archivos binarios en C/C++**.
 >
 > **Integrantes:** cada uno se agrega acá con su propio commit — `Nombre Apellido — @usuario`
 >
-> - _(pendiente)_
+> - Leandro Ricardo Albertoni Borghese - @Learicardo1
 
 La consigna completa está en **`enunciado.pdf`**. Leela antes de arrancar: el
 cliente (Alberto) cuenta su problema a su manera y ustedes tienen que descubrir

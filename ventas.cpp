@@ -19,7 +19,7 @@ Node* loadList (Node* start, Comanda venta);
 int main(int argc, char** argv) {	
 	char comandas[50] = "comandas_";
 	dayManager(comandas);
-	FILE* fcoman = fopen(comandas,"ab");
+	FILE* fcoman = fopen(comandas,"rb");
 	if (fcoman == NULL) {cout<<"No se pudo abrir el archivo."<< endl;return 1;};
 	fclose(fcoman);
 	int eleccion = 1;
@@ -42,7 +42,6 @@ int main(int argc, char** argv) {
 			};
 		} else{
 		eleccion = 0;
-		fclose(fcoman);
 		cout<<"Cerrando el programa";
 		return 0;	
 		};
@@ -122,8 +121,7 @@ void comandaCarga(char archivo[50], Node* start, int mozo, int idProducto, int c
 				regInventario.stockActual-=cantidad;
             	fseek(finventario,-(long)sizeof(Producto),SEEK_CUR);
             	fwrite(&regInventario,sizeof(Producto),1,finventario);
-            	fclose(finventario);
-			};
+  			};
 			};
 			fclose(finventario);
 			Comanda regComanda;

@@ -19,7 +19,7 @@ Node* loadList (Node* start, Comanda venta);
 int main(int argc, char** argv) {	
 	char comandas[50] = "comandas_";
 	dayManager(comandas);
-	FILE* fcoman = fopen(comandas,"rb");
+	FILE* fcoman = fopen(comandas,"ab");
 	if (fcoman == NULL) {cout<<"No se pudo abrir el archivo."<< endl;return 1;};
 	fclose(fcoman);
 	int eleccion = 1;
@@ -115,8 +115,10 @@ void comandaCarga(char archivo[50], Node* start, int mozo, int idProducto, int c
 			Producto regInventario;
 			float comision = 0;
 			float porcentaje = 0.10;
-			while (fread(&regInventario, sizeof(Producto), 1, finventario) == 1) {
+			bool encontrado = false;
+			while (!encontrado && fread(&regInventario, sizeof(Producto), 1, finventario) == 1) {
 				if(idProducto == regInventario.codigo){		
+				encontrado = true;
 				comision = regInventario.precio*cantidad*porcentaje;
 				regInventario.stockActual-=cantidad;
             	fseek(finventario,-(long)sizeof(Producto),SEEK_CUR);
